@@ -1,0 +1,10 @@
+<mat-toolbar color="amber"><span>Covid 19 Tracker(India)</span></mat-toolbar>
+<mat-grid-list cols="2" rowHeight="2.5:1">
+      <mat-grid-tile class="tile" *ngFor="let State of states" class="grid-tile" (click)="openDialog()" >
+       <mat-grid-tile-header >{{State.state}} {{State.id}}</mat-grid-tile-header> 
+               <button mat-raised-button>Active:{{State.active}}<br><span>+{{State.aChanges}}</span></button>
+               <button mat-raised-button color="primary">Recovered:{{State.recovered}}<br><span>+{{State.rChanges}}</span></button>
+               <button mat-raised-button>Confirmed:{{State.confirmed}}<br><span>+{{State.cChanges}}</span></button>
+               <button mat-raised-button color="warn">Deaths:{{State.deaths}}<br><span>+{{State.dChanges}}</span></button>
+    </mat-grid-tile>
+</mat-grid-list>
